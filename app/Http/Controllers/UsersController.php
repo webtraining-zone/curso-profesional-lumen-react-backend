@@ -31,7 +31,15 @@ class UsersController extends Controller
     public function createUser(Request $request)
     {
         if ($request->isJson()) {
-            $data = $request->json()->all();
+//            $data = $request->json()->all();
+
+            $data = $this->validate($request, [
+                'name' => 'required|max:255',
+                'username' => 'required',
+                'email' => 'required',
+                'password' => 'required',
+            ]);
+
             $user = User::create([
                 'name' => $data['name'],
                 'username' => $data['username'],
@@ -50,7 +58,15 @@ class UsersController extends Controller
         if ($request->isJson()) {
             try {
                 $user = User::findOrFail($id);
-                $data = $request->json()->all();
+//                $data = $request->json()->all();
+
+                $data = $this->validate($request, [
+                    'name' => 'required|max:255',
+                    'username' => 'required',
+                    'email' => 'required',
+                    'password' => 'required',
+                ]);
+
                 $user->name = $data['name'];
                 $user->username = $data['username'];
                 $user->email = $data['email'];
