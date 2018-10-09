@@ -53,6 +53,27 @@ class UsersController extends Controller
         }
     }
 
+    public function updateUserStatus(Request $request, $id)
+    {
+        if ($request->isJson()) {
+            try {
+                $user = User::findOrFail($id);
+
+                $data = $this->validate($request, [
+                    'status' => 'required'
+                ]);
+
+                $user->status = $data['status'];
+                $user->save();
+                return response()->json($user, 200);
+            } catch (ModelNotFoundException $e) {
+                return response()->json(['error' => 'No content'], 406);
+            }
+        } else {
+            return response()->json(['error' => 'Unauthorized'], 401, []);
+        }
+    }
+
     public function updateUser(Request $request, $id)
     {
         if ($request->isJson()) {

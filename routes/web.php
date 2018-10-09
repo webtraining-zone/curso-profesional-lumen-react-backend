@@ -39,5 +39,6 @@ $router->group(['middleware' => [], 'prefix' => 'api/v1'], function () use ($rou
     $router->get('/users/{id}', ['uses' => 'UsersController@getUser']);
     $router->post('/users', ['uses' => 'UsersController@createUser']);
     $router->put('/users/{id}', ['uses' => 'UsersController@updateUser']);
+    $router->put('/users/{id}/status', ['uses' => 'UsersController@updateUserStatus']);
     $router->delete('/users/{id}', ['uses' => 'UsersController@deleteUser']);
 });

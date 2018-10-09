@@ -2,7 +2,10 @@
 
 # Project Manager API
 
-Un ejemplo de RESTful API creado con Laravel Lumen.
+Un ejemplo de RESTful API creado con Laravel Lumen durante el [Curso Profesional Lumen + React](https://webtraining.zone/cursos/creacion-de-aplicaciones-con-lumen-y-react), disponible en 
+[Webtraining.Zone](https://webtraining.zone/cursos/creacion-de-aplicaciones-con-lumen-y-react).
+
+![Curso Profesional Lumen + React](https://webtraining.zone/img/metadata-courses/curso-profesional-lumen-react-2018.jpg)
 
 ## Pre-requisitos
 
