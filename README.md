@@ -46,8 +46,8 @@ Este archivo contiene dos usuarios, un proyecto y una tarea de demostración.
 2.1) Importa esta base de datos usando algún cliente web como PHPMyAdmin o Sequel Pro.
 2.2) Crea un usuario que se pueda conectar a esta base de datos, por ejemplo:
 ```
-Base de datos:  project_manager_api
-Usuario:        project_mgr_user
+Base de datos:  project_manager_db_lumen
+Usuario:        project_mgr_user_lumen
 Constraseña:    D5xNL5LpHPVTxwz4
 ```
 
@@ -64,8 +64,8 @@ LOG_SLACK_WEBHOOK_URL=
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=project_manager_api
-DB_USERNAME=project_mgr_user
+DB_DATABASE=project_manager_db_lumen
+DB_USERNAME=project_mgr_user_lumen
 DB_PASSWORD=D5xNL5LpHPVTxwz4
 
 CACHE_DRIVER=file
@@ -75,6 +75,13 @@ QUEUE_CONNECTION=sync
 Lo importante en este caso son los datos de conexión a la base de datos y la generación de tu `APP_KEY` que puedes 
 generar usando este [Random Generator](https://webtraining.zone/random-generator).
 
+Para crear un usuario en MySQL podemos usar:
+
+```
+CREATE USER 'project_mgr_user_lumen'@'localhost' IDENTIFIED BY 'D5xNL5LpHPVTxwz4';
+GRANT ALL PRIVILEGES ON project_manager_db_lumen.* TO 'project_mgr_user_lumen'@'localhost';
+FLUSH PRIVILEGES;
+```
 
 **Nota para MySQL 8**
 
