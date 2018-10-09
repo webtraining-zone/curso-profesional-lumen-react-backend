@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `project_manager_api` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `project_manager_api`;
+CREATE DATABASE  IF NOT EXISTS `project_manager_db_lumen` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `project_manager_db_lumen`;
 -- MySQL dump 10.13  Distrib 5.7.17, for macos10.12 (x86_64)
 --
--- Host: localhost    Database: project_manager_api
+-- Host: localhost    Database: project_manager_db_lumen
 -- ------------------------------------------------------
 -- Server version	8.0.11
 
@@ -132,7 +132,7 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`),
   UNIQUE KEY `users_api_token_unique` (`api_token`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -141,7 +141,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Esmeralda Rodriguez','esmeralda-rodriguez','INACTIVE','esmeralda@webtraining.zone','$2y$10$JIrDaHHTKogr3h21i0uqZuCwvSNsDcdoN17mxpLgax.fcA9oTDzoG',NULL,'jfj55lFpkciuIZyFsBY3MWfg9oEnhl3zfUpf5YHa487dI3NEdgxwwPnRs1d6','2018-10-09 00:43:57','2018-10-09 00:58:40'),(2,'Luis Ortíz','luis','INACTIVE','luis@webtraining.zone','$2y$10$1/RPamliSKh2hM9ojRx8su0/6W4Isy2KXR40SW27PmQoNzjUUjeR2',NULL,'EOru9g0xEpJTFgXT2cs69N9O2Lj6TjwJFFzFxKiJKcBHuEVk4UcU5mIZiIB0','2018-10-09 00:44:26','2018-10-09 13:57:48');
+INSERT INTO `users` VALUES (1,'Esmeralda Rodríguez','esmeralda-rodriguez','ACTIVE','esmeralda@webtraining.zone','$2y$10$JIrDaHHTKogr3h21i0uqZuCwvSNsDcdoN17mxpLgax.fcA9oTDzoG',NULL,'jfj55lFpkciuIZyFsBY3MWfg9oEnhl3zfUpf5YHa487dI3NEdgxwwPnRs1d6','2018-10-09 00:43:57','2018-10-09 20:44:57'),(2,'Luis Ortíz','luis','INACTIVE','luis@webtraining.zone','$2y$10$1/RPamliSKh2hM9ojRx8su0/6W4Isy2KXR40SW27PmQoNzjUUjeR2',NULL,'EOru9g0xEpJTFgXT2cs69N9O2Lj6TjwJFFzFxKiJKcBHuEVk4UcU5mIZiIB0','2018-10-09 00:44:26','2018-10-09 20:44:59'),(3,'Rosita Fernández','rosita','INACTIVE','rosita@gmail.com','$2y$10$6YRYVQRIb59dWy3rb5mkB.yn975VQfjx4gGvmrId0Sl4VQqZYg0U.',NULL,'sIin7llurpUUOz2bqMEOVhVdbDwuqaEGIXKp97VD0n6r2owT0dokYV4nv6xd','2018-10-09 20:49:05','2018-10-09 20:49:58'),(4,'Mario Méndez','mario','INACTIVE','mario@outlook.com','$2y$10$1IDfhx4grvecEPIa5GcbQuBFHHAbnrlJMdiYYXfwyv.Y1rt5zAKWK',NULL,'zM1QH1K0DAzwVlu26w2yATbJwElUIKQyH3K8cOXbRfIFjpg83Dims3dh5LUU','2018-10-09 20:49:27','2018-10-09 20:49:27'),(5,'José Armendáriz','jose','INACTIVE','jose@outlook.com','$2y$10$tmL6DVdGlskF/41rBnMmZefU1pXrT1E538BBXWfAEUzBTwRY0kC9a',NULL,'iiSCVXpHBu6yaR4skrQd9oIFtAHXpWFWVjPnptl4hMpAlN0Kv9Z056AhZrie','2018-10-09 20:50:27','2018-10-09 20:50:27'),(6,'Paola González','paola','INACTIVE','paola@hotmail.com','$2y$10$.Il.TG0EErrU1bxKp0x9yeJkIZ7aJvtpkb0ntTTgzRKxZWtf2.B22',NULL,'EOKXKshYiHD0RkABgYuS5eYIcIndzCdunkyaCsf2xki7M2vxlZvjNEEpxcvZ','2018-10-09 20:51:14','2018-10-09 20:51:14');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -154,4 +154,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-09 15:14:07
+-- Dump completed on 2018-10-09 16:16:57

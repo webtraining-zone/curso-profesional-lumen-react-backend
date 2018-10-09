@@ -40,7 +40,7 @@ composer install
 ```
 2) Configurar base de datos:
 
-Para tu comodidad hemos creado un *MySQL dump* en este archivo `<REPO>/database/sql/project_manager_api.sql`.
+Para tu comodidad hemos creado un *MySQL dump* en este archivo `<REPO>/database/sql/project_manager_db_lumen.sql`.
 Este archivo contiene dos usuarios, un proyecto y una tarea de demostración.
 
 2.1) Importa esta base de datos usando algún cliente web como PHPMyAdmin o Sequel Pro.
