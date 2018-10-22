@@ -16,10 +16,9 @@ $router->get('/', function () use ($router) {
 });
 
 // We are using a Middleware that doesn't require configuration
-// https://github.com/vluzrmos/lumen-cors
-//$router->group(['middleware' => []], function () use ($router) {
-//    $router->post('/users/login', ['uses' => 'UsersController@getToken']);
-//});
+$router->group(['middleware' => [], 'prefix' => 'api/v1'], function () use ($router) {
+    $router->post('/users/login', ['uses' => 'UsersController@getToken']);
+});
 //
 $router->group(['middleware' => [], 'prefix' => 'api/v1'], function () use ($router) {
     // Projects
