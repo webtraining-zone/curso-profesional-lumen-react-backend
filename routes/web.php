@@ -16,11 +16,11 @@ $router->get('/', function () use ($router) {
 });
 
 // We are using a Middleware that doesn't require configuration
-$router->group(['middleware' => [], 'prefix' => 'api/v1'], function () use ($router) {
+$router->group(['prefix' => 'api/v1'], function () use ($router) {
     $router->post('/users/login', ['uses' => 'UsersController@getToken']);
 });
 //
-$router->group(['middleware' => [], 'prefix' => 'api/v1'], function () use ($router) {
+$router->group(['middleware' => ['auth'], 'prefix' => 'api/v1'], function () use ($router) {
     // Projects
     $router->get('/projects', ['uses' => 'ProjectsController@getAll']);
     $router->get('/projects/{id}', ['uses' => 'ProjectsController@getProject']);
