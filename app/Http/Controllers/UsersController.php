@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
@@ -129,6 +130,11 @@ class UsersController extends Controller
         } else {
             return response()->json(['error' => 'Unauthorized'], 401, []);
         }
+    }
+
+    public function getUserId(Request $request)
+    {
+        return Auth::user()->id;
     }
 
     public function getToken(Request $request)

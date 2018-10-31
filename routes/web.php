@@ -36,6 +36,7 @@ $router->group(['middleware' => ['auth'], 'prefix' => 'api/v1'], function () use
 // Users
     $router->get('/users', ['uses' => 'UsersController@getAll']);
     $router->get('/users/{id}', ['uses' => 'UsersController@getUser']);
+    $router->get('/users/{id}/get-id', ['uses' => 'UsersController@getUserId']);
     $router->post('/users', ['uses' => 'UsersController@createUser']);
     $router->put('/users/{id}', ['uses' => 'UsersController@updateUser']);
     $router->put('/users/{id}/status', ['uses' => 'UsersController@updateUserStatus']);
