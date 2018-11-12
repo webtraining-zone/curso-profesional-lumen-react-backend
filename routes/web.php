@@ -18,6 +18,7 @@ $router->get('/', function () use ($router) {
 // We are using a Middleware that doesn't require configuration
 $router->group(['prefix' => 'api/v1'], function () use ($router) {
     $router->post('/users/login', ['uses' => 'UsersController@getToken']);
+    $router->post('/users', ['uses' => 'UsersController@createUser']);
 });
 //
 $router->group(['middleware' => ['auth'], 'prefix' => 'api/v1'], function () use ($router) {
@@ -37,7 +38,7 @@ $router->group(['middleware' => ['auth'], 'prefix' => 'api/v1'], function () use
     $router->get('/users', ['uses' => 'UsersController@getAll']);
     $router->get('/users/{id}', ['uses' => 'UsersController@getUser']);
     $router->get('/users/{id}/get-id', ['uses' => 'UsersController@getUserId']);
-    $router->post('/users', ['uses' => 'UsersController@createUser']);
+//    $router->post('/users', ['uses' => 'UsersController@createUser']);
     $router->put('/users/{id}', ['uses' => 'UsersController@updateUser']);
     $router->put('/users/{id}/status', ['uses' => 'UsersController@updateUserStatus']);
     $router->delete('/users/{id}', ['uses' => 'UsersController@deleteUser']);
